@@ -12,6 +12,9 @@ A simple game in which the player is tasked with defeating an AI. Inspired by Wy
 3. If you move the queen to her castle, you win.
 4. If the AI moves the queen to her castle, you lose.
 
+## Motivation
+I wanted to practice developing with React and AWS to further hone my skills. Therefore, I decided to create a simple game I could challenge my friends with. Can you beat the AI?
+
 ## Build status
 The most recent stable build is hosted at https://merrickclay.github.io/WythoffsQueen/
 
