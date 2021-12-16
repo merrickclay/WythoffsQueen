@@ -12,6 +12,7 @@ export default function GameBoard(props) {
   const [error, setError] = useState(null);
   const [tiles, setTiles] = useState(null);
   const [acceptNewMoves, setAcceptNewMoves] = useState(true);
+  const [enableHighlighs, setEnableHighlights] = useState(true);
 
   const invokeUrl = 'https://6k6fezitqe.execute-api.us-west-1.amazonaws.com/';
 
@@ -47,6 +48,7 @@ export default function GameBoard(props) {
       if (!acceptNewMoves) {
         return;
       }
+      setEnableHighlights(false);
       setAcceptNewMoves(false);
       setPosition(newPosition);
       await new Promise((resolve) => setTimeout(resolve, 300));
@@ -78,7 +80,8 @@ export default function GameBoard(props) {
         .catch((error) => {
           console.log(error);
           setError(null);
-        });
+        })
+        .finally(setEnableHighlights(true));
     },
     [acceptNewMoves]
   );
@@ -97,6 +100,7 @@ export default function GameBoard(props) {
           y={coords[1]}
           key={coords[1] * props.width + coords[0]}
           highlighted={
+            enableHighlighs &&
             position &&
             coords[0] <= position.x && // only highlight cells left of queen
             coords[1] <= position.y && // only highlight cells below queen
