@@ -1,18 +1,34 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Axios from 'axios';
 import dateFormat from 'dateformat';
 import GameTile from './GameTile';
 import './GameBoard.css';
-import { useEffect } from 'react';
+import Popup from './Popup';
 
 const AWS = require('aws-sdk');
+
+const popupData = {
+  player_victory: {
+    title: 'You won!',
+    message: 'Congratulations! You successfully beat the AI.',
+    challenge: 'Can you do it again?',
+    buttonText: 'Start New Game',
+  },
+  player_defeat: {
+    title: 'You lost!',
+    message: 'Come on, you were defeated by an AI...',
+    challenge: 'Give it another shot!',
+    buttonText: 'Start New Game',
+  },
+};
 
 export default function GameBoard(props) {
   const [position, setPosition] = useState(null);
   const [error, setError] = useState(null);
   const [tiles, setTiles] = useState(null);
   const [acceptNewMoves, setAcceptNewMoves] = useState(true);
-  const [enableHighlighs, setEnableHighlights] = useState(true);
+  const [enableHighlights, setEnableHighlights] = useState(true);
+  const [gameStatus, setGameStatus] = useState('IN_PROGRESS');
 
   const invokeUrl = 'https://6k6fezitqe.execute-api.us-west-1.amazonaws.com/';
 
@@ -35,6 +51,8 @@ export default function GameBoard(props) {
           x: response.data.position.x,
           y: response.data.position.y,
         });
+        console.log(response.data.gameStatus);
+        setGameStatus(response.data.gameStatus);
         setError(null);
       })
       .catch((err) => {
@@ -66,16 +84,14 @@ export default function GameBoard(props) {
       )
         .then(async (response) => {
           console.log(response);
-          setAcceptNewMoves(true);
           setError(null);
           setPosition({
             x: response.data.position.x,
             y: response.data.position.y,
           });
-          if (response.data.gameStatus !== 'IN_PROGRESS') {
-            await new Promise((resolve) => setTimeout(resolve, 500));
-            window.location.reload(false);
-          }
+          setAcceptNewMoves(true);
+          console.log(response.data.gameStatus);
+          setGameStatus(response.data.gameStatus);
         })
         .catch((error) => {
           console.log(error);
@@ -100,7 +116,7 @@ export default function GameBoard(props) {
           y={coords[1]}
           key={coords[1] * props.width + coords[0]}
           highlighted={
-            enableHighlighs &&
+            enableHighlights &&
             position &&
             coords[0] <= position.x && // only highlight cells left of queen
             coords[1] <= position.y && // only highlight cells below queen
@@ -139,6 +155,35 @@ export default function GameBoard(props) {
       }}
     >
       {tiles}
+
+      {gameStatus === 'PLAYER_VICTORY' ? (
+        <Popup
+          title={popupData.player_victory.title}
+          message={popupData.player_victory.message}
+          challenge={popupData.player_victory.challenge}
+          buttonText={popupData.player_victory.buttonText}
+          visible={true}
+          onClickFunc={startGame}
+        />
+      ) : gameStatus === 'PLAYER_DEFEAT' ? (
+        <Popup
+          title={popupData.player_defeat.title}
+          message={popupData.player_defeat.message}
+          challenge={popupData.player_defeat.challenge}
+          buttonText={popupData.player_defeat.buttonText}
+          visible={true}
+          onClickFunc={startGame}
+        />
+      ) : (
+        <Popup
+          title=""
+          message=""
+          challenge=""
+          buttonText=""
+          visible={false}
+          onClickFunc={null}
+        />
+      )}
     </div>
   );
 }
