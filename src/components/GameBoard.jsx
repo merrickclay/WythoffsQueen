@@ -46,17 +46,14 @@ export default function GameBoard(props) {
       }
     )
       .then((response) => {
-        console.log(response);
         setPosition({
           x: response.data.position.x,
           y: response.data.position.y,
         });
-        console.log(response.data.gameStatus);
         setGameStatus(response.data.gameStatus);
         setError(null);
       })
       .catch((err) => {
-        console.log(err);
         setError(err);
       });
   }
@@ -83,18 +80,15 @@ export default function GameBoard(props) {
         }
       )
         .then(async (response) => {
-          console.log(response);
           setError(null);
           setPosition({
             x: response.data.position.x,
             y: response.data.position.y,
           });
           setAcceptNewMoves(true);
-          console.log(response.data.gameStatus);
           setGameStatus(response.data.gameStatus);
         })
         .catch((error) => {
-          console.log(error);
           setError(null);
         })
         .finally(setEnableHighlights(true));
