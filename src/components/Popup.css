@@ -22,8 +22,16 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 30%;
-  width: 30%;
+  max-width: 80%;
+  width: 80%;
+}
+
+/* Desktop and tablets */
+@media only screen and (min-width: 768px) {
+  .popup {
+    width: 30%;
+    max-width: 30%;
+  }
 }
 
 .popup h2 {
