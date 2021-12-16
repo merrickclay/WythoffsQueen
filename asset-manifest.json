@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/WythoffsQueen/static/css/main.bb6b0c63.chunk.css",
-    "main.js": "/WythoffsQueen/static/js/main.6b995dc3.chunk.js",
-    "main.js.map": "/WythoffsQueen/static/js/main.6b995dc3.chunk.js.map",
+    "main.js": "/WythoffsQueen/static/js/main.7ebb3504.chunk.js",
+    "main.js.map": "/WythoffsQueen/static/js/main.7ebb3504.chunk.js.map",
     "runtime-main.js": "/WythoffsQueen/static/js/runtime-main.67743db1.js",
     "runtime-main.js.map": "/WythoffsQueen/static/js/runtime-main.67743db1.js.map",
-    "static/js/2.77caf579.chunk.js": "/WythoffsQueen/static/js/2.77caf579.chunk.js",
-    "static/js/2.77caf579.chunk.js.map": "/WythoffsQueen/static/js/2.77caf579.chunk.js.map",
+    "static/js/2.77667970.chunk.js": "/WythoffsQueen/static/js/2.77667970.chunk.js",
+    "static/js/2.77667970.chunk.js.map": "/WythoffsQueen/static/js/2.77667970.chunk.js.map",
     "static/js/3.ef357184.chunk.js": "/WythoffsQueen/static/js/3.ef357184.chunk.js",
     "static/js/3.ef357184.chunk.js.map": "/WythoffsQueen/static/js/3.ef357184.chunk.js.map",
     "index.html": "/WythoffsQueen/index.html",
     "static/css/main.bb6b0c63.chunk.css.map": "/WythoffsQueen/static/css/main.bb6b0c63.chunk.css.map",
-    "static/js/2.77caf579.chunk.js.LICENSE.txt": "/WythoffsQueen/static/js/2.77caf579.chunk.js.LICENSE.txt"
+    "static/js/2.77667970.chunk.js.LICENSE.txt": "/WythoffsQueen/static/js/2.77667970.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.67743db1.js",
-    "static/js/2.77caf579.chunk.js",
+    "static/js/2.77667970.chunk.js",
     "static/css/main.bb6b0c63.chunk.css",
-    "static/js/main.6b995dc3.chunk.js"
+    "static/js/main.7ebb3504.chunk.js"
   ]
 }
