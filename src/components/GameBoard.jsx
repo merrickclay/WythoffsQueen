@@ -55,6 +55,7 @@ export default function GameBoard(props) {
       })
       .catch((err) => {
         setError(err);
+        alert('ERROR: ', err);
       });
   }
 
@@ -89,7 +90,8 @@ export default function GameBoard(props) {
           setGameStatus(response.data.gameStatus);
         })
         .catch((error) => {
-          setError(null);
+          setError(error);
+          alert('ERROR: ', err);
         })
         .finally(setEnableHighlights(true));
     },
