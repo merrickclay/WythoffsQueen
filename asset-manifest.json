@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/WythoffsQueen/static/css/main.558b7e16.chunk.css",
+    "main.css": "/WythoffsQueen/static/css/main.cad85f10.chunk.css",
     "main.js": "/WythoffsQueen/static/js/main.780d8c3a.chunk.js",
     "main.js.map": "/WythoffsQueen/static/js/main.780d8c3a.chunk.js.map",
     "runtime-main.js": "/WythoffsQueen/static/js/runtime-main.b071edfe.js",
@@ -10,13 +10,13 @@
     "static/js/3.d50fd404.chunk.js": "/WythoffsQueen/static/js/3.d50fd404.chunk.js",
     "static/js/3.d50fd404.chunk.js.map": "/WythoffsQueen/static/js/3.d50fd404.chunk.js.map",
     "index.html": "/WythoffsQueen/index.html",
-    "static/css/main.558b7e16.chunk.css.map": "/WythoffsQueen/static/css/main.558b7e16.chunk.css.map",
+    "static/css/main.cad85f10.chunk.css.map": "/WythoffsQueen/static/css/main.cad85f10.chunk.css.map",
     "static/js/2.940fe136.chunk.js.LICENSE.txt": "/WythoffsQueen/static/js/2.940fe136.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b071edfe.js",
     "static/js/2.940fe136.chunk.js",
-    "static/css/main.558b7e16.chunk.css",
+    "static/css/main.cad85f10.chunk.css",
     "static/js/main.780d8c3a.chunk.js"
   ]
 }
